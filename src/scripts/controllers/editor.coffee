@@ -76,7 +76,7 @@ class Editor extends Controller
 
 			# update graph layout (called when needed)
 			restart = ->
-				edges = edges.data(net.edges)
+				edges = edges.data(net.edges, (edge) -> edge.id)
 
 				# update existing links
 				edges.style('marker-start', (edge) -> if edge.left > 0 then 'url(#startArrow)' else '')
